@@ -44,7 +44,7 @@ class Solution:
             if num == 0:
                 closest_to_zero = num
                 break
-            if abs(num) < abs(closest_to_zero):
+            elif abs(num) < abs(closest_to_zero):
                 closest_to_zero = num
                 next
             elif abs(num) == abs(closest_to_zero):

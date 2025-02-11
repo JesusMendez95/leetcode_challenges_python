@@ -35,7 +35,9 @@ Submissions
 Acceptance Rate
 46.8%
 """
+
 # submittion: https://leetcode.com/problems/find-closest-number-to-zero/solutions/6341832/python-intuitive-solution-by-dvlsfdxunt-qlh8
+
 
 class Solution:
     def findClosestNumber(self, nums: list[int]) -> int:

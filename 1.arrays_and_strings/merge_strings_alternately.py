@@ -9,7 +9,7 @@ You are given two strings word1 and word2. Merge the strings by adding letters i
 
 Return the merged string.
 
- 
+
 
 Example 1:
 
@@ -24,7 +24,7 @@ Example 2:
 Input: word1 = "ab", word2 = "pqrs"
 Output: "apbqrs"
 Explanation: Notice that as word2 is longer, "rs" is appended to the end.
-word1:  a   b 
+word1:  a   b
 word2:    p   q   r   s
 merged: a p b q   r   s
 Example 3:
@@ -33,19 +33,21 @@ Input: word1 = "abcd", word2 = "pq"
 Output: "apbqcd"
 Explanation: Notice that as word1 is longer, "cd" is appended to the end.
 word1:  a   b   c   d
-word2:    p   q 
+word2:    p   q
 merged: a p b q c   d
- 
+
 
 Constraints:
 
 1 <= word1.length, word2.length <= 100
 word1 and word2 consist of lowercase English letters.
 """
+
 # https://leetcode.com/problems/merge-strings-alternately/submissions/1525057163
 
+
 class Solution:
-    def mergeAlternately(self, word1: str, word2: str) -> str: 
+    def mergeAlternately(self, word1: str, word2: str) -> str:
         # first try
         """
         word3 = []
@@ -63,13 +65,13 @@ class Solution:
         """
         # optimized explained
         word3 = []
-        # zip function create a iterator as a tuple of iterables pairs, until shorter len 
+        # zip function create a iterator as a tuple of iterables pairs, until shorter len
         # iterable.
-        for w1,w2 in zip(word1,word2): 
-            word3.append(w1+w2)
+        for w1, w2 in zip(word1, word2):
+            word3.append(w1 + w2)
         # append both remain posibles letters from w1 and w2, when a list of len = n
         # is sliced with a greater index from n will return '' when exceed the index n
-        word3.append(word1[len(word2):])
-        word3.append(word2[len(word1):])
+        word3.append(word1[len(word2) :])
+        word3.append(word2[len(word1) :])
         # ''.join() join '' just as empty space so it doesnt change the str value
-        return ''.join(word3)
+        return "".join(word3)
